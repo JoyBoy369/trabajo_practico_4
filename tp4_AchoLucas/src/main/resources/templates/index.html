@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+	<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<link rel= "stylesheet" th:href="@{/css/estilos.css}">
+	
+
+</head>
+<body>
+
+
+<header class="bg-light py-3">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <img th:src="@{/images/logo2.png}" alt="Logo" width="170" height="70" class="mr-3">
+      <div>
+        <h1 class="h4 mb-0">Universidad Nacional de Jujuy</h1>
+        <p class="mb-0">Innovación y Conocimiento para un Mundo Mejor</p>
+      </div>
+    </div>
+  </div>
+</header>
+	
+     <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" style="background-color: #2082A5;">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Carreras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+  <div class="wrapper">
+        <aside class="sidebar col-lg-2 col-md-4 d-none d-md-block">
+            <h5>Menú</h5>
+            <a href="#">Biblioteca</a>
+            <a href="#">Calendario Académico</a>
+            <a href="#">Departamentos</a>
+            <a href="#">Investigación</a>
+            <a href="#">Contacto</a>
+        </aside>
+        <main class="content col-lg-9 col-md-8 col-12">
+            <section class="mb-5">
+                <h2>Sobre la Facultad de Ingeniería</h2>
+                <p>La Facultad de Ingeniería de la UNJu se dedica a formar profesionales altamente capacitados en diversas áreas de la ingeniería. Contamos con un equipo docente de primera línea y ofrecemos programas académicos de excelencia.</p>
+            </section>
+            <section>
+                <h2>Noticias Recientes</h2>
+                <div class="news-item">
+                    <h5>Conferencia sobre Energías Renovables</h5>
+                    <p>El próximo jueves, se llevará a cabo una conferencia sobre energías renovables en el auditorio principal. Los interesados pueden inscribirse en la secretaría de la facultad.</p>
+                </div>
+                <div class="news-item">
+                    <h5>Nuevo Laboratorio de Robótica</h5>
+                    <p>Se ha inaugurado un nuevo laboratorio de robótica con equipos de última generación para los estudiantes de ingeniería electrónica.</p>
+                </div>
+                <div class="news-item">
+                    <h5>Proyecto de Investigación en Inteligencia Artificial</h5>
+                    <p>La facultad ha iniciado un nuevo proyecto de investigación en inteligencia artificial en colaboración con universidades internacionales.</p>
+                </div>
+            </section>
+        </main>
+     
+    </div>
+
+
+
+
+ <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="column-title">FACULTAD DE INGENIERÍA - UNJu</h5>
+                    <p>📚 Ítalo Palanca Nº 10</p>
+                    <p>🌍 San Salvador de Jujuy<br>Jujuy - Argentina</p>
+                    <p>📧 <a href="mailto:info@fi.unju.edu.ar">info@fi.unju.edu.ar</a></p>
+                    <h6>Aviso Legal</h6>
+                    <a href="#">Términos y Condiciones</a><br>
+                    <a href="#">Condiciones de uso del Correo Electrónico</a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="column-title">Redes Sociales</h5>
+                    <div class="links">
+                        <a href="#">Facebook</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="column-title">Enlaces de Interés</h5>
+                    <div class="links">
+                        <a href="#">Teléfonos</a>
+                        <a href="#">Modelos de Notas</a>
+                        <a href="#">SIU Guaraní</a>
+                        <a href="#">Campus FI</a>
+                        <a href="#">Protocolos de Bioseguridad</a>
+                        <a href="#">Doctorado en Ingeniería Industrial</a>
+                        <a href="#">Doctorado en Alimentos</a>
+                        <a href="#">CODINOA</a>
+                        <a href="#">Becas UNJu</a>
+                        <a href="#">Sistema de Bibliotecas de la UNJu</a>
+                        <a href="#">Biblioteca Electrónica C y T</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
