@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head data-th-replace="~{/layouts/header :: head}">
+
+</head>
+<body>
+<div data-th-replace="~{/layouts/header :: header}"></div>
+
+
+
+ <div class="container mt-5 col-lg-6" >
+ 
+ 		<div class="row mb-3">
+        <h2 data-th-text="${editar}?'Editar Docente':'Registrar Nuevo docente'" class="mb-4"></h2>
+        </div>
+        <form data-th-action="${editar}?@{/docente/modificar} : @{/docente/guardar}" th:object="${docente}" method="post">
+        
+            <div class="row mb-3 justify-content-center"th:if="${editar}">
+                <label for="codigo">Legajo:</label>
+                <div>
+                	
+                	 <input type="number" th:readonly="${editar}?'readonly'" class="form-control" id="legajo" th:field="*{legajo}">
+                </div>
+               
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
+            </div>
+            
+             <div class="form-group">
+                <label for="nombre">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" th:field="*{apellido}" required>
+            </div>
+            
+           <div class="form-group">
+                <label for="nombre">Correo:</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Telefono:</label>
+                <input type="number" class="form-control" id="telefono" th:field="*{telefono}" required>
+            </div>
+            
+            <br>
+            <p class="text-center"> <input type="submit" class="btn btn-primary" th:value="${editar}?'Editar':'Guardar'"></p>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

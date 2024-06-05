@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head data-th-replace="~{/layouts/header :: head}">
+
+</head>
+<body>
+<div data-th-replace="~{/layouts/header :: header}"></div>
+
+
+	
+	 <div class=" mt-5 container d-flex justify-content-center align-items-center">
+		<div class="text-center">
+		   <a  data-th-href="@{/docente/nuevo}" class="btn btn-success">Nuevo Docente</a>
+		</div>
+    </div>
+	
+	 <div class="container mt-5">
+        <div class="row">
+        	
+        
+            <div class="card m-3 d-inline-block col-lg-5" data-th-each="doce: ${docentes}">
+                <div class="row g-0">
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <img th:src="@{/images/docente.png}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                   
+                    <div class="col-md-8 d-flex flex-column justify-content-center">
+                        <div class="card-body">
+                            <h5 class="card-title"><span data-th-text="${doce.nombre}+' '"></span><span data-th-text="${doce.apellido}"></span></h5>
+                            
+                            <p class="card-text">Legajo: <span data-th-text="${doce.legajo}"></span></p>
+                            <p class="card-text">Correo: <span data-th-text="${doce.email}"></span></p>
+                            <p class="card-text">Telefono: +54 <span data-th-text="${doce.telefono}"></span></p>
+                            
+                            <a class="btn btn-warning" data-th-href="@{/docente/modificar/}+${doce.legajo}"><small class="text-muted">Editar</small></a>
+                            <a class="btn btn-danger" data-th-href="@{/docente/eliminar/}+${doce.legajo}"><small class="text-muted">Eliminar</small></a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

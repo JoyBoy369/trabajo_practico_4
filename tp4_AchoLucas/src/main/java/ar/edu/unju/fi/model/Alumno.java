@@ -1,14 +1,22 @@
 package ar.edu.unju.fi.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alumno {
     private String dni;
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
-    private Date fechaNacimiento;
+    
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private LocalDate fechaNacimiento;
+    
     private String domicilio;
     private String lu; // LU = Libreta Universitaria
     
@@ -17,7 +25,7 @@ public class Alumno {
     public Alumno() {}
 
     // Constructor con argumentos
-    public Alumno(String dni, String nombre, String apellido, String email, String telefono, Date fechaNacimiento, String domicilio, String lu) {
+    public Alumno(String dni, String nombre, String apellido, String email, String telefono, LocalDate fechaNacimiento, String domicilio, String lu) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -70,11 +78,11 @@ public class Alumno {
         this.telefono = telefono;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
