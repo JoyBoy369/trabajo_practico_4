@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head data-th-replace="~{/layouts/header :: head}">
+
+</head>
+<body>
+<div data-th-replace="~{/layouts/header :: header}"></div>
+
+
+
+ <div class="container mt-5 col-lg-6" >
+ 
+ 		<div class="row mb-3">
+        <h2 data-th-text="${editar}?'Editar Materia':'Registrar Nueva Materia'" class="mb-4"></h2>
+        </div>
+        <form data-th-action="${editar}?@{/materia/modificar} : @{/materia/guardar}" th:object="${materia}" method="post">
+        
+            <div class="row mb-3 justify-content-center"th:if="${editar}">
+                <label for="codigo">Código</label>
+                <div>
+                	
+                	 <input type="number" th:readonly="${editar}?'readonly'" class="form-control" id="codigo" th:field="*{codigo}">
+                </div>
+               
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Curso:</label>
+                <input type="text" class="form-control" id="curso" th:field="*{curso}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="duracion">Carga Horaria:</label>
+                <input type="number" class="form-control" id="duracion" th:field="*{cantidadHoras}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Modalidad:</label>              
+                <select id="modalidad" name="modalidad" th:field="*{modalidad}" class="form-control">
+			            <option value="Virtual">Virtual</option>
+			            <option value="Presencial">Presencial</option>
+        		</select>
+            </div>
+            
+             <div class="form-group">
+                <label for="nombre">Docente:</label>              
+                <select id="docente" name="docente" th:field="*{docente.legajo}" class="form-control">
+			            <option  th:each="d: ${docentes}" 
+			            		 th:value="${d.legajo}"
+			            		 th:text="${d.nombre}+' '+${d.apellido}"></option>
+			           
+        		</select>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Carrera:</label>              
+                <select id="carrera" name="carrera" th:field="*{carrera.codigo}"class="form-control">
+			            <option  th:each="c: ${carreras}" 
+			            		 th:value="${c.codigo}"
+			            		 th:text="${c.nombre}"></option>
+			           
+        		</select>
+            </div>
+            
+            
+            
+            
+            <br>
+            <p class="text-center"> <input type="submit" class="btn btn-primary" th:value="${editar}?'Editar':'Guardar'"></p>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
