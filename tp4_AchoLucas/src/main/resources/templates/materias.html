@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head data-th-replace="~{/layouts/header :: head}">
+
+</head>
+<body>
+<div data-th-replace="~{/layouts/header :: header}"></div>
+
+
+	
+	 <div class=" mt-5 container d-flex justify-content-center align-items-center">
+		<div class="text-center">
+		   <a  data-th-href="@{/materia/nuevo}" class="btn btn-success">Nueva Materia</a>
+		</div>
+    </div>
+	
+	 <div class="container mt-5">
+        <div class="row">
+        	
+        
+            <div class="card m-3 d-inline-block col-lg-5" data-th-each="mate: ${materias}">
+                <div class="row g-0">
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <img th:src="@{/images/uni.png}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                   
+                    <div class="col-md-8 d-flex flex-column justify-content-center">
+                        <div class="card-body">
+                           <h5 class="card-title"><span data-th-text="${mate.nombre}"></span></h5>
+                            <p class="card-text">Curso: <span data-th-text="${mate.curso}"></span></p>
+                            <p class="card-text">Carga horaria: <span data-th-text="${mate.cantidadHoras}"></span></p>
+                            <p class="card-text">Modalidad: <span data-th-text="${mate.modalidad}"></span></p>
+                            <p class="card-text">Docente: <span data-th-text="${mate.docente.nombre}+' '"></span><span data-th-text="${mate.docente.apellido}"></span></p>
+                            <p class="card-text">Carrera: <span data-th-text="${mate.carrera.nombre}"></span></p>
+                            
+                            
+                            
+                            <a class="btn btn-warning" data-th-href="@{/materia/modificar/}+${mate.codigo}"><small class="text-muted">Editar</small></a>
+                            <a class="btn btn-danger" data-th-href="@{/materia/eliminar/}+${mate.codigo}"><small class="text-muted">Eliminar</small></a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
