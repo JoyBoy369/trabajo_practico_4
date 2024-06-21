@@ -15,13 +15,18 @@
         </div>
         <form data-th-action="${editar}?@{/alumno/modificar} : @{/alumno/guardar}" th:object="${alumno}" method="post">
         
-            <div class="row mb-3 justify-content-center">
-                <label for="codigo">DNI</label>
+            <div class="row mb-3 justify-content-center"th:if="${editar}">
+                <label for="codigo">ID:</label>
                 <div>
                 	
-                	  <input type="text" class="form-control" id="dni" th:field="*{dni}" required>
+                	 <input type="number" th:readonly="${editar}?'readonly'" class="form-control" id="id" th:field="*{id}">
                 </div>
                
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">DNI:</label>
+                <input type="text" class="form-control" id="dni" th:field="*{dni}" required>
             </div>
             
              <div class="form-group">

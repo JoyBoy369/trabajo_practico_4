@@ -31,14 +31,15 @@
                            
                             <p class="card-text">LU: <span data-th-text="${alum.lu}"></span></p>
                             <p class="card-text">DNI: <span data-th-text="${alum.dni}"></span></p>
-                            <p class="card-text">Nacimiento: <span data-th-text="${#temporals.format(alum.fechaNacimiento,'dd/MM/yyyy')}"></span></p>
+                            <p class="card-text">Nacimiento: <span data-th-text="${alum.fechaNacimiento}"></span></p>
+                           
                             <p class="card-text">Correo: <span data-th-text="${alum.email}"></span></p>
                             <p class="card-text">Telefono: +54 <span data-th-text="${alum.telefono}"></span></p>
                             <p class="card-text">Domicilio: <span data-th-text="${alum.domicilio}"></span></p>
                             
                           
-                            <a class="btn btn-warning" data-th-href="@{/alumno/modificar/}+${alum.dni}"><small class="text-muted">Editar</small></a>
-                            <a class="btn btn-danger" data-th-href="@{/alumno/eliminar/}+${alum.dni}"><small class="text-muted">Eliminar</small></a>
+                            <a class="btn btn-warning" data-th-href="@{/alumno/modificar/}+${alum.id}"><small class="text-muted">Editar</small></a>
+                            <a class="btn btn-danger" data-th-href="@{/alumno/eliminar/}+${alum.id}"><small class="text-muted">Eliminar</small></a>
                         </div>
                     </div> 
                 </div>

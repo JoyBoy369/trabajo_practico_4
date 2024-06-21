@@ -25,6 +25,8 @@ public class CollectionAlumno {
 		
 		if(alumnos.isEmpty()) {
 			
+				//Sin usar //
+			/*
 				alumnos.add(new Alumno("12345678", "Juan", "Pérez", "juan.perez@example.com", "123456789", LocalDate.of(2000, 1, 1), "Calle Falsa 123", "LU001"));
 		        alumnos.add(new Alumno("87654321", "Ana", "García", "ana.garcia@example.com", "987654321", LocalDate.of(1999, 2, 15), "Avenida Siempreviva 742", "LU002"));
 		        alumnos.add(new Alumno("23456789", "Luis", "Martínez", "luis.martinez@example.com", "234567890", LocalDate.of(2001, 3, 22), "Calle de la Paz 100", "LU003"));
@@ -33,7 +35,7 @@ public class CollectionAlumno {
 		        alumnos.add(new Alumno("56789012", "Lucía", "Sánchez", "lucia.sanchez@example.com", "567890123", LocalDate.of(2000, 6, 9), "Avenida Estrella 400", "LU006"));
 		        alumnos.add(new Alumno("67890123", "Jorge", "González", "jorge.gonzalez@example.com", "678901234", LocalDate.of(1997, 7, 30), "Calle del Río 500", "LU007"));
 		        alumnos.add(new Alumno("78901234", "Laura", "Rodríguez", "laura.rodriguez@example.com", "789012345", LocalDate.of(2003, 8, 15), "Avenida del Lago 600", "LU008"));
-          
+          */
 		}
 		
 		return alumnos;

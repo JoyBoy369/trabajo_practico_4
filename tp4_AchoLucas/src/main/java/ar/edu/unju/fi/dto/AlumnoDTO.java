@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Component
 public class AlumnoDTO {
-	
+		
+		private String id;
 		private String dni;
 	    private String nombre;
 	    private String apellido;
@@ -19,5 +20,5 @@ public class AlumnoDTO {
 	    private String fechaNacimiento;	    
 	    private String domicilio;
 	    private String lu; // LU = Libreta Universitaria
-
+	    private String estado;
 }
